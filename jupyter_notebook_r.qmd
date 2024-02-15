@@ -1,0 +1,96 @@
+---
+title: the data
+#jupyter: ir
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: 3
+date: Sys.Date()
+bibliography: bib.bib
+---
+
+If you want to see how execution options work, you can go
+[here](https://quarto.org/docs/computations/execution-options.html)
+
+```{r}
+#| output: false
+
+library(tidyverse)
+```
+
+# Load the data
+
+`mtcars` has cars in it
+
+
+```{r}
+mtcars
+```
+
+We can go look at plots and figures
+
+```{r}
+ggplot(mtcars, aes(x = hp, y = mpg, color = factor(am))) + geom_point() + facet_wrap(~gear) + theme(text = element_text(size=20))
+```
+
+$$y = mx + b$$
+
+# header 1
+<h1> another header 1 </h1>
+
+## header 2
+
+
+### header 3
+
+#### h4
+
+##### h5
+
+semantic line breaks:
+
+Following the yaml frontmatter section,
+by default,
+the rest of the document is considered Markdown text.
+If no markdown syntax is used,
+the text will be rendered as unformatted text.
+Here is a table of very common markdown formatting that you might find useful:
+
+**bold text**
+
+*italic text* _italic text_
+
+~~strikethrough~~
+
+`verbatim text`
+
+`library(tidyverse)`
+
+1. item 1
+2. item 2
+1. item 3
+10. item 4
+
+- bullet1
+- bullet2
+  - bullet 2a
+
+Links:
+
+- <https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/README.html>
+- [here](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/README.html) is the dsci 310 course book
+
+```
+this is a multi line
+verbatim
+chunk
+```
+
+![](400.jpeg)
+
+```{r}
+knitr::kable(mtcars)
+```
+
+I want to tank Hadley for writing ggplot2 @ggplot2
